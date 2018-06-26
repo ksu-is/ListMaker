@@ -2,7 +2,10 @@
 print("CREATE A LIST".center(15,'='))
 lis=[]
 import shelve,os
-os.chdir('.')
+if not os.path.exists('\\list):
+    os.makedirs('\\list')
+
+os.chdir('\\list')    
 if 'listData.bat' in os.listdir('.'):
     shelf=shelve.open('listData')
     count=shelf['count']
