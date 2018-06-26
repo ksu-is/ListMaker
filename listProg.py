@@ -2,14 +2,14 @@
 print("CREATE A LIST".center(15,'='))
 lis=[]
 import shelve,os
-os.chdir(r'P:\\python practice\workshop\list')
+os.chdir('.')
 if 'listData.bat' in os.listdir('.'):
     shelf=shelve.open('listData')
-    i=shelf['i']
+    count=shelf['count']
 else:
     shelf=shelve.open('listData')
-    i=0
-    shelf['i']=i
+    count=0
+    shelf['count']=count
     shelf.close()
     shelf=shelve.open('listData')
 
