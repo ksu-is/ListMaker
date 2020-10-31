@@ -2,10 +2,10 @@
 print("CREATE A LIST".center(15,'='))
 lis=[]
 import shelve,os
-if not os.path.exists('\\list):
-    os.makedirs('\\list')
+if not os.path.exists('list):
+    os.makedirs('list')
 
-os.chdir('\\list')    
+os.chdir('list')    
 if 'listData.bat' in os.listdir('.'):
     shelf=shelve.open('listData')
     count=shelf['count']
@@ -43,12 +43,12 @@ while True:
                 
             list_file.close()
 
-            print("Done!\nOpen P:\\Python practice\workshop\list to view the file")
-            os.system('{}.txt' .format(name))
+            print(f"Done!\nOpen {os.getcwd()} to view the file")
+            os.system(f'{name}.txt')
             choice=int(input("Do you want to see the contents?\nPress 1 for Yes. 0 for No "))
             if choice==1:
                 for i in range(len(lis)):
-                    print("{} {}" .format(i+1,lis[i]))
+                    print(f"{i+1} {lis[i]}")
             elif choice==0:
                 pass
 
@@ -57,7 +57,7 @@ while True:
             name=input("What is the name of the list? ")
             name=name+'.txt'
             if name in os.listdir('.'):
-                list_file=open('{}' .format(name),'r+')
+                list_file=open(f'{name}','r+')
                 for line in list_file:
                     print(line, end='')
                 list_file.close()
