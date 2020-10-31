@@ -8,11 +8,11 @@ if not os.path.exists('list):
 os.chdir('list')    
 if 'listData.bat' in os.listdir('.'):
     shelf=shelve.open('listData')
-    count=shelf['count']
+    cnt=shelf['cnt']
 else:
     shelf=shelve.open('listData')
-    count=0
-    shelf['count']=count
+    cnt=0
+    shelf['cnt']=cnt
     shelf.close()
     shelf=shelve.open('listData')
 
@@ -39,7 +39,7 @@ while True:
 
             print("Creating a .txt file for you...")
             for i in range(len(lis)):
-                list_file.write("{} {}\n" .format(i+1,lis[i]))
+                list_file.write(f"{i+1} {lis[i]}\n")
                 
             list_file.close()
 
@@ -49,8 +49,6 @@ while True:
             if choice==1:
                 for i in range(len(lis)):
                     print(f"{i+1} {lis[i]}")
-            elif choice==0:
-                pass
 
 
         if inp==2:
